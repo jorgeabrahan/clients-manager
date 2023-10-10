@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { AddClient, Clients } from '../components/new'
+---
+
+<Layout title="Client Manager - new">
+  <main class="px-2 md:px-5 max-w-[1024px] mx-auto">
+    <AddClient client:load />
+    <Clients client:load />
+  </main>
+</Layout>
