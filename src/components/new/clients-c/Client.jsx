@@ -1,6 +1,6 @@
-import { toLocalCurrency } from "../../helpers/global";
-import { calcArticlesTotal } from "../../helpers/articles";
-import { ButtonDark } from "../general/ButtonDark";
+import { toLocalCurrency } from "../../../helpers/global";
+import { calcArticlesTotal } from "../../../helpers/articles";
+import { ButtonDark } from "../../general/ButtonDark";
 
 export const Client = ({ id = '', name = '', articles = [] }) => {
   return (
