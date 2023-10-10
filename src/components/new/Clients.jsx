@@ -1,5 +1,5 @@
 import { registryStore } from '../../registryStore'
-import { Client } from './Client'
+import { Client } from './clients-c/Client'
 
 export function Clients() {
   const { clients } = registryStore((state) => state)
