@@ -1,1 +1,6 @@
 export * from './isNewClient'
+export * from './getClientById'
+export * from './getClientByName'
+export * from './mergeClients'
+export * from './addSortedClient'
+export * from './calcClientsTotal'

@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { AddClient, Clients } from '../components/new'
+import { AddClient, Clients, RegistryClient, History } from '../components/new'
+import { EditClient } from '../components/new/EditClient'
 ---
 
+<RegistryClient client:load />
 <Layout title="Client Manager - new">
-  <main class="px-2 md:px-5 max-w-[1024px] mx-auto">
-    <AddClient client:load />
-    <Clients client:load />
-  </main>
+  <AddClient client:load />
+  <Clients client:load />
+  <EditClient client:load />
+  <History client:load />
 </Layout>

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+select {
+  -webkit-appearance: none;  /* Remover el estilo por defecto en Chrome y Safari */
+  -moz-appearance: none;     /* Remover el estilo por defecto en Firefox */
+  appearance: none;          /* Remover el estilo por defecto en otros navegadores */
+  background: transparent;   /* Hacer el fondo transparente */
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

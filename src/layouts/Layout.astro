@@ -1,4 +1,8 @@
 ---
+import { Toaster } from 'react-hot-toast'
+import Delimiter from './Delimiter.astro'
+import { ConfirmationDialog } from '../components/general'
+import '../styles/global.css'
 interface Props {
   title: string
 }
@@ -12,11 +16,11 @@ const { title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="/client.png" rel="icon" type="image/png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <!-- google icons -->
@@ -25,15 +29,30 @@ const { title } = Astro.props
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#121212">
+    <meta name="color-scheme" content="dark">
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <ConfirmationDialog client:load />
+    <Toaster
+      position="bottom-right"
+      reverseOrder={false}
+      toastOptions={{ duration: 6000 }}
+      client:load
+    />
+    <main>
+      <Delimiter>
+        <slot />
+      </Delimiter>
+    </main>
   </body>
 </html>
 
 <style is:global>
-  *, *::after, *::before {
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
   }
   :root {

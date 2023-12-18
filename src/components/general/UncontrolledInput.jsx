@@ -1,25 +1,23 @@
-export const Input = ({
+export const UncontrolledInput = ({
   type = 'text',
   placeholder = '',
   id = '',
-  value = '',
-  onInputChange = () => {},
+  defaultValue = '',
   isRequired = true,
-  label = ''
+  label = '',
 }) => {
   return (
     <div>
-      <label className="ml-3 text-sm" htmlFor={id}>
+      <label className="mb-1" htmlFor={id}>
         {label}
       </label>
       <input
-        className="p-2 rounded-lg border border-solid border-slate-500"
+        className="p-2 rounded-lg"
         type={type}
         name={id}
         id={id}
-        value={value}
+        defaultValue={defaultValue}
         placeholder={placeholder}
-        onChange={onInputChange}
         required={isRequired}
         autoComplete="off"
         spellCheck="false"
